@@ -1,0 +1,68 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">Quizz</string>
+
+    <!--Question 1 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_1">1. What shell supplied a purple dye to the ancient world?</string>
+    <string name="question_1_choice_1">Mitre</string>
+    <string name="question_1_choice_2">Oyster</string>
+    <string name="question_1_choice_3">Cone</string>
+    <string name="question_1_choice_4">Murex</string>
+
+    <!--Question 2 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_2">2. What shell is known for its many chambers?</string>
+    <string name="question_2_choice_1">Helmet</string>
+    <string name="question_2_choice_2">Nautilus</string>
+    <string name="question_2_choice_3">Wentletrap</string>
+    <string name="question_2_choice_4">Conch</string>
+
+    <!--Question 3 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_3">3. Which shell\'s name shares a root with \"ostracize\"?</string>
+    <string name="question_3_choice_1">Murex</string>
+    <string name="question_3_choice_2">Scallop</string>
+    <string name="question_3_choice_3">Oyster</string>
+    <string name="question_3_choice_4">Nautilus</string>
+
+    <!--Question 4 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_4">4. What shell gets its name from the Dutch word \"spiral stairs\"?</string>
+
+    <!--Question 5 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_5">5. Which shells were often used as money in the Pacific?</string>
+    <string name="question_5_choice_1">Cowries</string>
+    <string name="question_5_choice_2">Scallops</string>
+    <string name="question_5_choice_3">Topshells</string>
+    <string name="question_5_choice_4">Mussels</string>
+
+    <!--Question 6 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_6">6.  Which clam has the name of a goddess?</string>
+    <string name="question_6_choice_1">Athena</string>
+    <string name="question_6_choice_2">Diana</string>
+    <string name="question_6_choice_3">Venus</string>
+    <string name="question_6_choice_4">Artemis</string>
+
+    <!--Question 7 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_7">7. Which clam shares its name with a piece of cutlery?</string>
+    <string name="question_7_choice_1">Table knife</string>
+    <string name="question_7_choice_2">Pen knife</string>
+    <string name="question_7_choice_3">Jackknife</string>
+    <string name="question_7_choice_4">Bowie knife</string>
+
+    <!--Question 8 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_8">8. What shell gets its name from the Latin word for \"heart\"?.</string>
+
+    <!--Question 9 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_9">9. What shell\'s name is from the Latin for \"roll\"?</string>
+    <string name="question_9_choice_1">Tun</string>
+    <string name="question_9_choice_2">Whelk</string>
+    <string name="question_9_choice_3">Volute</string>
+    <string name="question_9_choice_4">Conch</string>
+
+    <!--Question 10 of the quizz [CHAR LIMIT=NONE]-->
+    <string name="question_10">10. What shell may be thought to be named after a Biblical vessel?</string>
+    <string name="question_10_hint"><font size="8">Think of flood...</font></string>
+
+    <!--Button for submitting the answers of the quizz [CHAR LIMIT=20]-->
+    <string name="submit">Submit Answers</string>
+
+</resources>

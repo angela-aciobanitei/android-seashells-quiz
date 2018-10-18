@@ -1,7 +1,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Title for the application. [CHAR LIMIT=12] -->
-    <string name="app_name">Quizz</string>
+    <string name="app_name">Seashells Quiz</string>
 
     <!--Question 1 of the quizz [CHAR LIMIT=NONE]-->
     <string name="question_1">1. What shell supplied a purple dye to the ancient world?</string>

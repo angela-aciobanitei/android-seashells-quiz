@@ -5,101 +5,117 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class MainActivity extends AppCompatActivity {
+
+
+    @BindView(R.id.question_1_answer) RadioButton answerOneRadioButton;
+    @BindView(R.id.question_2_answer) RadioButton answerTwoRadioButton;
+    @BindView(R.id.question_3_answer) RadioButton answerThreeRadioButton;
+    @BindView(R.id.question_4_answer) EditText answerFourEditText;
+    @BindView(R.id.question_5_answer) RadioButton answerFiveRadioButton;
+    @BindView(R.id.question_6_answer_1) CheckBox choiceOneCheckBox;
+    @BindView(R.id.question_6_answer_2) CheckBox choiceTwoCheckBox;
+    @BindView(R.id.question_6_answer_3) CheckBox choiceThreeCheckBox;
+    @BindView(R.id.question_6_answer_4) CheckBox choiceFourCheckBox;
+    @BindView(R.id.question_7_answer) RadioButton answerSevenRadioButton;
+    @BindView(R.id.question_8_answer) EditText answerEightEditText;
+    @BindView(R.id.question_9_answer) RadioButton answerNineRadioButton;
+    @BindView(R.id.question_10_answer) EditText answerTenEditText;
+    @BindView(R.id.submit_button) Button submitButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Hide the keyboard
-        // this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_main);
+
+        ButterKnife.bind(this);
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayResults();
+            }
+        });
     }
 
-    public void submitAnswers (View view) {
+
+    public int calculateScore () {
         int score = 0;
 
         // Handle question 1
-        RadioButton answerOneRadioButton = (RadioButton)findViewById(R.id.question_1_answer);
         if (answerOneRadioButton.isChecked()) {
-            score +=1;
+            score ++;
         }
 
         // Handle question 2
-        RadioButton answerTwoRadioButton = (RadioButton)findViewById(R.id.question_2_answer);
         if (answerTwoRadioButton.isChecked()) {
-            score +=1;
+            score ++;
         }
 
         // Handle question 3
-        RadioButton answerThreeRadioButton = (RadioButton)findViewById(R.id.question_3_answer);
         if (answerThreeRadioButton.isChecked()) {
-            score +=1;
+            score ++;
         }
 
         // Handle question 4
-        EditText answerFourEditText = (EditText)findViewById(R.id.question_4_answer);
         String answerFour  =  answerFourEditText.getText().toString().toLowerCase().trim();
-        if(answerFour.equals("wentletrap") || answerFour.equals("wentletraps")) {
-            score += 1;
+        if(answerFour.equals(getString(R.string.question_4_answer_var_1))
+                || answerFour.equals(getString(R.string.question_4_answer_var_2))) {
+            score ++;
         }
 
         // Handle question 5
-        RadioButton answerFiveRadioButton = (RadioButton)findViewById(R.id.question_5_answer);
         if (answerFiveRadioButton.isChecked()) {
-            score +=1;
+            score ++;
         }
 
         // Handle question 6
-        CheckBox choiceOneCheckBox = (CheckBox)findViewById(R.id.question_6_answer_1);
-        boolean  choiceOne = choiceOneCheckBox.isChecked();
-
-        CheckBox choiceTwoCheckBox = (CheckBox)findViewById(R.id.question_6_answer_2);
-        boolean  choiceTwo = choiceTwoCheckBox.isChecked();
-
-        CheckBox choiceThreeCheckBox = (CheckBox)findViewById(R.id.question_6_answer_3);
-        boolean  choiceThree = choiceThreeCheckBox.isChecked();
-
-        CheckBox choiceFourCheckBox = (CheckBox)findViewById(R.id.question_6_answer_4);
-        boolean  choiceFour = choiceFourCheckBox.isChecked();
-
-        if(!choiceOne && !choiceTwo && choiceThree && choiceFour) {
-            score +=1;
+        if(!choiceOneCheckBox.isChecked() && !choiceTwoCheckBox.isChecked()
+                && choiceThreeCheckBox.isChecked() && choiceFourCheckBox.isChecked()) {
+            score ++;
         }
 
         // Handle question 7
-        RadioButton answerSevenRadioButton = (RadioButton)findViewById(R.id.question_7_answer);
         if (answerSevenRadioButton.isChecked()) {
-            score +=1;
+            score ++;
         }
 
         // Handle question 8
-        EditText answerEightEditText = (EditText)findViewById(R.id.question_8_answer);
         String answerEight  =  answerEightEditText.getText().toString().toLowerCase().trim();
-        if(answerEight.equals("cockle") || answerEight.equals("cockles")) {
-            score +=1;
+        if(answerEight.equals(getString(R.string.question_8_answer_var_1))
+                || answerEight.equals(getString(R.string.question_8_answer_var_2))) {
+            score ++;
         }
 
         // Handle question 9
-        RadioButton answerNineRadioButton = (RadioButton)findViewById(R.id.question_9_answer);
         if (answerNineRadioButton.isChecked()) {
-            score +=1;
+            score ++;
         }
 
         // Handle question 10
-        EditText answerTenEditText = (EditText)findViewById(R.id.question_10_answer);
         String answerTen  =  answerTenEditText.getText().toString().toLowerCase().trim();
-        if(answerTen.equals("ark") || answerTen.equals("arks")) {
-            score +=1;
+        if(answerTen.equals(getString(R.string.question_10_answer_var_1))
+                || answerTen.equals(getString(R.string.question_10_answer_var_2))) {
+            score ++;
         }
 
+        return score;
+    }
+
+    private void displayResults() {
         // Final score
+        int score = calculateScore();
         CharSequence displayResults;
         if (score == 10){
             displayResults = "Perfect! You scored 10 out of 10";
